@@ -1,12 +1,13 @@
 import React from 'react'
-import FunctionComponent from './Components/FunctionComponent'
-import Spread from './Components/Spread'
+import Calc from './Components/Calc'
+import SimpleCrud from './Components/SimpleCrud'
 
 export default function App() {
   return (
     <div>
       {/* <FunctionComponent/> */}
-      <Spread />
+      {/* <Calc/> */}
+      <SimpleCrud/>
     </div>
   )
 } 
