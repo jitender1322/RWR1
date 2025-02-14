@@ -9,7 +9,7 @@ export default function LocalCrud() {
   const [record, setRecord] = useState([]);
 
   const handleSubmit = () => {
-    let obj = { name, email, city, gender };
+    let obj = {id : Date.now() ,name, email, city, gender };
     setRecord([...record, obj]);
 
     setName("");
@@ -17,6 +17,11 @@ export default function LocalCrud() {
     setEmail("");
     setGender("");
   };
+
+  const handleDelete = (id)=>{
+    const deletedData = record.filter((item)=>item.id != id) 
+    setRecord(deletedData)
+  }
   return (
     <div>
       <h1>LocalCrud</h1>
@@ -59,20 +64,23 @@ export default function LocalCrud() {
 
       <table width="80%" style={{ border: "2px solid black" }}>
         <tr>
-          <th>Sr. No.</th>
+          <th>Id</th>
           <th>Name</th>
           <th>Email</th>
           <th>City</th>
           <th>Gender</th>
+          <th colSpan="2">Action</th>
         </tr>
         {record.map((e, i) => {
           return (
             <tr key={i}>
-              <td>{i + 1}</td>
+              <td>{e.id}</td>
               <td>{e.name}</td>
               <td>{e.email}</td>
               <td>{e.city}</td>
               <td>{e.gender}</td>
+              <td><button>Edit</button></td>
+              <td><button onClick={()=>handleDelete(e.id)} >Delete</button></td>
             </tr>
           );
         })}
