@@ -1,16 +1,14 @@
 import React from 'react'
-import LocalCrud from './components/localCrud'
-import Searching from './components/Searching'
-import Filtering from './components/Filtering'
-import Sorting from './components/Sorting'
+import { Provider } from 'react-redux'
+import { store } from './app/Store'
+import ReduxCounter from './components/ReduxCounter'
 
 export default function App() {
   return (
     <div>
-      {/* <LocalCrud/> */}
-      {/* <Searching/> */}
-      {/* <Filtering/> */}
-      <Sorting/>
+      <Provider store={store}>
+      <ReduxCounter/>
+      </Provider>
     </div>
   )
 }
