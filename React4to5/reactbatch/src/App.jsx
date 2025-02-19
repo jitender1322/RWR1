@@ -6,7 +6,7 @@ import { store } from './app/Store'
 export default function App() {
   return (
     <div>
-      <Provider store={store} >
+      <Provider store={store}>
         <ReduxCounter/>
       </Provider>
     </div>
