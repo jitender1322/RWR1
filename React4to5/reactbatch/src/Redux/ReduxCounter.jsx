@@ -4,13 +4,14 @@ import { decrement, increment } from '../features/Slice'
 
 export default function ReduxCounter() {
   const dispatch = useDispatch()
-  const count = useSelector((state)=>{
-    return state.counterReducer.count
+  const obj = useSelector((state)=>{
+    return state.counterReducer
   })
   return (
     <div>
       <h1>ReduxCounter</h1>
-      <h1>{count}</h1>
+      <h1>{obj.count}</h1>
+      <h1>{obj.name}</h1>
       <button onClick={()=>dispatch(increment())}>+</button>
       <button onClick={()=>dispatch(decrement())}>-</button>
     </div>
