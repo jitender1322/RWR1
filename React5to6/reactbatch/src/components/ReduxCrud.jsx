@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addData, deleteData, updateData } from "../features/CrudSlice";
 
-export default function ReduxCrud() {
+export default function ReduxCrud({st}) {
   const [name, setName] = useState("");
   const [sub, setSub] = useState("");
   const [editIndex, setEditIndex] = useState(null);
@@ -39,6 +39,7 @@ export default function ReduxCrud() {
   return (
     <div>
       <h1>Redux CRUD</h1>
+      <h1>{st}</h1>
       <input
         type="text"
         placeholder="Enter your name"
