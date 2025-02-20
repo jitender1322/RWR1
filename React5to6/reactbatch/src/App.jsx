@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { store } from './app/Store'
 import ReduxCounter from './components/ReduxCounter'
 import ReduxCrud from './components/ReduxCrud'
+import ReduxApiCom from './components/ReduxApiCom'
 
 export default function App() {
   const name = "Sumit"
@@ -10,7 +11,8 @@ export default function App() {
     <div>
       <Provider store={store}>
       {/* <ReduxCounter/> */}
-      <ReduxCrud/>
+      {/* <ReduxCrud/> */}
+      <ReduxApiCom/>
       </Provider>
     </div>
   )
