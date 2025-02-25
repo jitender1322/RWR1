@@ -1,8 +1,15 @@
 import React, { useState } from 'react'
+import { useLocation } from 'react-router-dom';
 
 export default function Sorting() {
      const [sort,setSort]=useState("asc")
      const [record,setRecord] = useState(null)
+
+     const allData = useLocation()
+     
+     console.log(allData);
+     
+
       const data = [
         {
           id: 1,

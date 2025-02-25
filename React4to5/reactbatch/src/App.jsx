@@ -1,18 +1,19 @@
 import React from 'react'
-import { Provider } from 'react-redux'
-import ReduxCounter from './Redux/ReduxCounter'
-import { store } from './app/Store'
-import ReduxCrud from './Redux/ReduxCrud'
-import ReduxApi from './Redux/ReduxApi'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Filtering from './Components/Filtering'
+import Sorting from './Components/Sorting'
+import UseReducer from './Components/UseReducer'
 
 export default function App() {
   return (
     <div>
-      <Provider store={store}>
-        {/* <ReduxCounter/> */}
-        {/* <ReduxCrud/> */}
-        <ReduxApi/>
-      </Provider>
+      {/* <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Filtering/>}  ></Route>
+        <Route path='/sort' element={<Sorting/>}  ></Route>
+      </Routes>
+      </BrowserRouter> */}
+      <UseReducer/>
     </div>
   )
 }
